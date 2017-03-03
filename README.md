@@ -1,24 +1,25 @@
 # README
+  Read me first!
+## Configuration
+``` rails db:drop ``` remove existing database
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+``` rails db:create ```
 
-Things you may want to cover:
+``` rails db:migrate ```
 
-* Ruby version
+``` rails db:seed ```
 
-* System dependencies
+# Usage
+Access ```localhost:3000/login``` to login
 
-* Configuration
+Redirects you here
+``` localhost:3000/dasboard``` after successful login
 
-* Database creation
+## Credentials
+username: ```user1```  password: ```user1```
 
-* Database initialization
+### Creating Users
+* Use ```rails c```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Then
+```User.create(username: "<username>", password: "<password>")```
