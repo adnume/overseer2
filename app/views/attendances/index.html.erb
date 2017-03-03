@@ -1,0 +1,13 @@
+Attendance for <%=@meeting.meeting %>
+<table>
+  <thead>
+    <tr>
+      <th> ID Number </th>
+      <th> Name </th>
+      <th> Action </th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial:"student", collection: @students, meeting: @meeting %>
+  </tbody>
+</table>

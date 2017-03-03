@@ -1,0 +1,9 @@
+<%= form_for [current_user, @subject] do |f|%>
+  <%= f.label :course_code %>
+  <%= f.text_field :course_code %> <br>
+  <%= f.label :course_name %>
+  <%= f.text_field :course_name %> <br>
+  <%= f.label :section %>
+  <%= f.text_field :section %> <br>
+  <%= f.submit %>
+<% end %>

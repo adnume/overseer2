@@ -1,0 +1,13 @@
+Students
+<table>
+  <thead>
+    <tr>
+      <th> Date </th>
+      <th> Remarks </th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @meetings %>
+  </tbody>
+</table>
+<%= link_to "Add", new_subject_meeting_path(@subject) %>

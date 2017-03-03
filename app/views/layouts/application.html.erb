@@ -10,8 +10,7 @@
 
   <body>
     <% if current_user %>
-      <%=  current_user.username %>
-      <br>
+      <%=  current_user.username %> 
       <%= link_to "Log Out", logout_path %>
       <br>
     <% end %>

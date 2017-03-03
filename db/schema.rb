@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170303093013) do
+ActiveRecord::Schema.define(version: 20170303102803) do
+
+  create_table "attendances", force: :cascade do |t|
+    t.integer  "student_id"
+    t.integer  "meeting_id"
+    t.integer  "subject_id"
+    t.string   "status",     default: "present"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
+
+  create_table "meetings", force: :cascade do |t|
+    t.integer  "subject_id"
+    t.string   "meeting_type"
+    t.text     "remarks"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "students", force: :cascade do |t|
     t.integer  "subject_id"

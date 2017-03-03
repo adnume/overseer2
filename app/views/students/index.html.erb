@@ -1,0 +1,13 @@
+Students
+<table>
+  <thead>
+    <tr>
+      <th> ID Number </th>
+      <th> Name </th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @students %>
+  </tbody>
+</table>
+<%= link_to "Add", new_subject_student_path(@subject) %>
