@@ -13,4 +13,21 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require materialize-sprockets
 //= require_tree .
+
+var tooltip_function = function() {
+  $('.tooltipped').tooltip({delay: 10});
+};
+var tooltip_remove = function() {
+  $('.tooltipped').tooltip('remove');
+}
+$(document).on('turbolinks:load', function () {
+  $('.modal').modal();
+  tooltip_function();
+  Materialize.updateTextFields();
+  // setTimeout(tooltip_function(), 10);
+});
+var update_fields = function() {
+Materialize.updateTextFields();
+};

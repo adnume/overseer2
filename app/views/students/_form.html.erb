@@ -1,7 +1,36 @@
-<%= form_for [@subject, @student] do |f|%>
-  <%= f.label :id_number %>
-  <%= f.text_field :id_number %> <br>
-  <%= f.label :name %>
-  <%= f.text_field :name %> <br>
-  <%= f.submit %>
-<% end %>
+<div class="row">
+  <div class="col s4 offset-s4">
+    <div class="card">
+      <%= form_for [@subject, @student] do |f|%>
+        <div class="card-content">
+          <div class="card-title">
+            Student
+          </div>
+          <div class="input-field">
+            <%= f.label :id_number %>
+            <%= f.text_field :id_number %>
+          </div>
+          <div class="input-field">
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name %>
+          </div>
+          <div class="input-field">
+            <%= f.label :middle_name %>
+            <%= f.text_field :middle_name %>
+          </div>
+          <div class="input-field">
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name %>
+          </div>
+          <div class="input-field">
+            <%= f.label :suffix %>
+            <%= f.text_field :suffix %>
+          </div>
+        </div>
+        <div class="card-action action-menu">
+          <%= f.submit class:"btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

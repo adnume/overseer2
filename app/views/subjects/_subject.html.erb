@@ -1,6 +1,23 @@
-<tr>
-  <td> <%= subject.course_code%> </td>
-  <td> <%= subject.course_name%> </td>
-  <td> <%= subject.section%> </td>
-  <td> <%= link_to "Students", subject_students_path(subject.id) %> </td>
-</tr>
+
+<div class="col s12 m4" id="subject-<%= subject.id %>">
+  <div class="card hoverable">
+    <div class="card-header blue lighten-1">
+      <span class="card-title white-text">
+        <%= subject.course_code%>
+        <%= "(#{subject.section})"%>
+      </span>
+    </div>
+
+    <div class="card-content card-uniform">
+      <p><%= subject.course_name%> <p>
+    </div>
+    <div class="card-action action-menu">
+    <% if can? :manage, subject %>
+      <%= link_to "View", subject_path(subject.id), class: "btn tooltipped",
+        data: {position:"bottom", tooltip:"View"} %>
+      <%= link_to "Edit", edit_subject_path(subject.id), class: "btn tooltipped",
+        data: {position:"bottom", tooltip:"View"} %>
+    <% end %>
+    </div> <!-- row -->
+  </div>
+</div>

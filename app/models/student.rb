@@ -1,5 +1,7 @@
 class Student < ApplicationRecord
   has_many :attendances
+  belongs_to :subject
+  validates_presence_of :first_name, :last_name
   def self.not_deleted
     self.all
   end
@@ -12,4 +14,10 @@ class Student < ApplicationRecord
   #     attendance.
   #   end
   # end
+  def name
+    "#{self.first_name} #{self.middle_name} #{self.last_name} #{self.suffix}"
+  end
+  def name_reversed
+    "#{self.last_name}, #{(self.first_name + ' ') rescue ''}#{(self.middle_name.first.upcase + ' ') rescue ''}"
+  end
 end

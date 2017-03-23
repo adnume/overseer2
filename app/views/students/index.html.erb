@@ -1,13 +1,22 @@
-Students
-<table>
-  <thead>
-    <tr>
-      <th> ID Number </th>
-      <th> Name </th>
-    </tr>
-  </thead>
-  <tbody>
-    <%= render @students %>
-  </tbody>
-</table>
-<%= link_to "Add", new_subject_student_path(@subject) %>
+<div class="row">
+  <div class="col s12">
+    <h4>  Students of <i> <%= @subject.course_code %></i> </h4>
+    <table class="striped">
+      <thead>
+        <tr>
+          <th> ID Number </th>
+          <th> Name </th>
+          <th> Actions </th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @students %>
+      </tbody>
+    </table>
+    <div class="row">
+      <div class="fixed-action-btn">
+        <%= link_to material_icon.add, new_subject_student_path(@subject), class:"btn-floating btn-large red" %>
+      </div>
+    </div>
+  </div>
+</div>

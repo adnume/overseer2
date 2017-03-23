@@ -1,5 +1,5 @@
 <tr id="student-<%=student.id%>">
   <td> <%= student.id_number%> </td>
   <td> <%= student.name%> </td>
-  <td> <%= link_to status(student, @meeting), toggle_meeting_attendances_path(@meeting.id, student: student.id), remote: true %></td>
+  <td> <%= link_to status(student, @meeting), toggle_meeting_attendances_path(@meeting.id, student: student.id), remote: true, class: attendance_class(student, @meeting) %></td>
 </tr>

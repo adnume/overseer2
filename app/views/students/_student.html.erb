@@ -1,4 +1,8 @@
 <tr id="student-<%=student.id%>">
   <td> <%= student.id_number%> </td>
-  <td> <%= student.name%> </td>
+  <td> <%= student.name_reversed%> </td>
+  <td>
+    <%= link_to material_icon.mode_edit, edit_student_path(student), class: "btn" %>
+    <%= link_to material_icon.delete, student, method: :delete, class: "btn red lighten-1" %>
+  </td>
 </tr>

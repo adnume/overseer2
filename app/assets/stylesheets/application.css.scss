@@ -1,0 +1,19 @@
+
+
+@import "materialize/components/color";
+$primary-color: color("blue", "darken-2") !default;
+$secondary-color: color("violet", "base") !default;
+@import 'materialize';
+@import 'material_icons';
+@import "*";
+
+.card-header {
+  padding: 4px 20px;
+}
+.card-uniform {
+  height: 150px;
+}
+
+.row-action {
+  margin-bottom:  0px;
+}

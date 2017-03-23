@@ -1,3 +1,12 @@
-<div>
-  <%= link_to "Subjects", user_subjects_path(current_user) %> <br>
+</div>
+<h3>Subjects </h3>
+<div class="row">
+  <div id="subject-index">
+      <%= render @subjects %>
+  </div>
+</div>
+<div class="row">
+  <div class="fixed-action-btn">
+    <%= link_to material_icon.add, new_user_subject_path(current_user), class:"btn-floating btn-large red" %>
+  </div>
 </div>

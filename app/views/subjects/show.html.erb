@@ -1,0 +1,46 @@
+
+<p><%= @subject.course_name%> <p>
+<div class="row">
+  <div class="col s12 m4">
+    <div class="card hoverable">
+      <div class="card-header blue lighten-1">
+        <span class="card-title white-text">
+          Students
+        </span>
+      </div>
+
+      <div class="card-content card-uniform">
+        <p> Total: <%= @subject.students.not_deleted.count rescue 0%></p>
+      </div>
+      <div class="card-action action-menu">
+        <div class="row row-action">
+          <% if can? :manage, @subject %>
+            <%= link_to "View", subject_students_path(@subject),class: "btn" %>
+          <% end %>
+        </div>
+      </div> <!-- row -->
+    </div>
+  </div>
+
+  <div class="col s12 m4">
+    <div class="card hoverable">
+      <div class="card-header blue lighten-1">
+        <span class="card-title white-text">
+          Meetings
+        </span>
+      </div>
+
+      <div class="card-content card-uniform">
+        <p> Total: <%= @subject.meetings.not_deleted.count%></p>
+        <p> Last Meeting: <%= @subject.meetings.last.meeting rescue "None"%> </p>
+      </div>
+      <div class="card-action action-menu">
+        <div class="row row-action">
+          <% if can? :manage, @subject %>
+            <%= link_to "View", subject_meetings_path(@subject), class:"btn" %> <br>
+          <% end %>
+        </div>
+      </div> <!-- row -->
+    </div>
+  </div>
+</div>

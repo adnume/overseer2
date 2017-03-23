@@ -23,18 +23,24 @@ ActiveRecord::Schema.define(version: 20170303102803) do
 
   create_table "meetings", force: :cascade do |t|
     t.integer  "subject_id"
-    t.string   "meeting_type"
+    t.string   "meeting_type", default: "Regular"
+    t.date     "date"
+    t.time     "start_time"
+    t.time     "end_time"
     t.text     "remarks"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   create_table "students", force: :cascade do |t|
     t.integer  "subject_id"
     t.integer  "id_number"
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "first_name"
+    t.string   "middle_name"
+    t.string   "last_name"
+    t.string   "suffix"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "subjects", force: :cascade do |t|
